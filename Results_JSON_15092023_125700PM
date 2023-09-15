@@ -1,0 +1,32 @@
+{
+    "La criptovaluta con il volume maggiore (in $) delle ultime 24 ore": {
+        "Tether USDt": 20235612103.792652
+    },
+    "Le migliori 10 criptovalute in termini di incremento percentuale nelle ultime 24 ore": {
+        "Axie Infinity": "11.85832467%",
+        "THORChain": "8.48778004%",
+        "Bitcoin Cash": "8.21917715%",
+        "WOO Network": "6.45386906%",
+        "Arweave": "5.87865263%",
+        "Compound": "5.63298766%",
+        "XDC Network": "5.30978694%",
+        "VeChain": "5.23609673%",
+        "Injective": "5.04305749%",
+        "Optimism": "4.85549039%"
+    },
+    "Le peggiori 10 criptovalute in termini di incremento percentuale nelle ultime 24 ore": {
+        "Frax Share": "-0.44721205%",
+        "Rocket Pool": "-0.45434833%",
+        "Arbitrum": "-0.57980035%",
+        "Casper": "-0.65658948%",
+        "Pepe": "-0.92029477%",
+        "IOTA": "-1.39445887%",
+        "GMX": "-1.48382429%",
+        "Hedera": "-2.10533824%",
+        "Conflux": "-3.03392869%",
+        "ApeCoin": "-4.94913918%"
+    },
+    "Denaro necessario per acquistare una unita di ciascuna delle prime 20 criptovalute": 55405.72014207013,
+    "Denaro necessario per acquistare una unita delle criptovalute con volume last24h > 76.000.000$": 55458.63974194575,
+    "% realizzata se avessi comprato una unita di ciascuna delle prime 20 criptovalute il giorno prima": "1.0830743646267635%"
+}
