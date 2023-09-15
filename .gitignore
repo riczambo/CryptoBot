@@ -1,2 +1,3 @@
 /config.py #API key information
 /Results_JSON* #All results file
+/*.zip #All .zip file
