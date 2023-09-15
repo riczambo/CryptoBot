@@ -1,4 +1,4 @@
-# CryptoBot_v2
+# CryptoBot
 
 VERSIONE ITALIANA
 
