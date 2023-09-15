@@ -1,10 +1,7 @@
 import config
 import requests
-from pprint import pprint
 from datetime import datetime
-import time
 import json
-
 class Bot:
     def __init__(self):
         self.url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest'
@@ -38,39 +35,39 @@ H24Volume = 76000000
 TotPrice24 = 0
 TotGain = 0
 
-#logic1
+# logic1
 for currency in currencies:
     if currency['quote']['USD']['volume_24h'] > MaxFlowCurrency[1]:
         MaxFlowCurrency[0] = currency['name']
         MaxFlowCurrency[1] = currency['quote']['USD']['volume_24h']
 results_1.update({MaxFlowCurrency[0]: MaxFlowCurrency[1]})
 
-#logic2
+# logic2
 for currency in sorted_currencies[:10]:
     percent_change = currency['quote']['USD']['percent_change_24h']
     results_2.update({currency['name']: f'{percent_change}%'})
 
-#logic3
+# logic3
 for currency in sorted_currencies[-10:]:
     percent_change = currency['quote']['USD']['percent_change_24h']
     results_3.update({currency['name']: f'{percent_change}%'})
 
-#logic4
+# logic4
 for currency in currencies[:20]:
     TotPrice += currency['quote']['USD']['price']
 
-#logic5
+# logic5
 for currency in currencies:
     if currency['quote']['USD']['volume_24h'] > H24Volume:
         TotPrice24 += currency['quote']['USD']['price']
 
-#logic6
+# logic6
 for currency in currencies[:20]:
     Gain = (currency['quote']['USD']['price'])*((currency['quote']['USD']['percent_change_24h'])/100)
     TotGain += Gain
 TotPerc = TotGain*100/TotPrice
 
-#JSON file export
+# JSON file export
 x = {
     "La criptovaluta con il volume maggiore (in $) delle ultime 24 ore": results_1,
     "Le migliori 10 criptovalute in termini di incremento percentuale nelle ultime 24 ore": results_2,
