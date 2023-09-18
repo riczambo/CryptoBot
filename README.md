@@ -1,6 +1,6 @@
 # CryptoBot
 
-VERSIONE ITALIANA
+> VERSIONE ITALIANA
 
 Il bot manda una richiesta a [CoinMarketCap](https://coinmarketcap.com/) per ottenere una lista delle 100 criptovalute con maggior capitalizzazione.
 Il bot elabora i seguenti punti e salva i risultati in un file JSON.
@@ -15,7 +15,7 @@ Un esempio di file è il seguente:
 [Example_JSON_Results](Example_JSON_Results)
 
 ----------------------------------------------------------------------------
-ENGLISH VERSION
+> ENGLISH VERSION
 
 The bot sends a request to [CoinMarketCap](https://coinmarketcap.com/) to obtain a list of the 100 most capitalised cryptocurrencies.
 The bot processes the information below and saves the results in a JSON file.
