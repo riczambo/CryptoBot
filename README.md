@@ -15,6 +15,7 @@ Un esempio di file è il seguente:
 [Example_JSON_Results](Example_JSON_Results)
 
 ----------------------------------------------------------------------------
+
 > ENGLISH VERSION
 
 The bot sends a request to [CoinMarketCap](https://coinmarketcap.com/) to obtain a list of the 100 most capitalised cryptocurrencies.
