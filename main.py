@@ -29,18 +29,18 @@ sorted_currencies = sorted(currencies, key=lambda x: x['quote']['USD']['percent_
 results_1 = {}
 results_2 = {}
 results_3 = {}
-MaxFlowCurrency = [None, 0]
-TotPrice = 0
-H24Volume = 76000000
-TotPrice24 = 0
-TotGain = 0
+maxFlowCurrency = [None, 0]
+totPrice = 0
+h24volume = 76000000
+totPrice24 = 0
+totGain = 0
 
 # logic1
 for currency in currencies:
-    if currency['quote']['USD']['volume_24h'] > MaxFlowCurrency[1]:
-        MaxFlowCurrency[0] = currency['name']
-        MaxFlowCurrency[1] = currency['quote']['USD']['volume_24h']
-results_1.update({MaxFlowCurrency[0]: MaxFlowCurrency[1]})
+    if currency['quote']['USD']['volume_24h'] > maxFlowCurrency[1]:
+        maxFlowCurrency[0] = currency['name']
+        maxFlowCurrency[1] = currency['quote']['USD']['volume_24h']
+results_1.update({maxFlowCurrency[0]: maxFlowCurrency[1]})
 
 # logic2
 for currency in sorted_currencies[:10]:
@@ -54,27 +54,27 @@ for currency in sorted_currencies[-10:]:
 
 # logic4
 for currency in currencies[:20]:
-    TotPrice += currency['quote']['USD']['price']
+    totPrice += currency['quote']['USD']['price']
 
 # logic5
 for currency in currencies:
-    if currency['quote']['USD']['volume_24h'] > H24Volume:
-        TotPrice24 += currency['quote']['USD']['price']
+    if currency['quote']['USD']['volume_24h'] > h24volume:
+        totPrice24 += currency['quote']['USD']['price']
 
 # logic6
 for currency in currencies[:20]:
     Gain = (currency['quote']['USD']['price'])*((currency['quote']['USD']['percent_change_24h'])/100)
-    TotGain += Gain
-TotPerc = TotGain*100/TotPrice
+    totGain += Gain
+totPerc = totGain * 100 / totPrice
 
 # JSON file export
 x = {
     "La criptovaluta con il volume maggiore (in $) delle ultime 24 ore": results_1,
     "Le migliori 10 criptovalute in termini di incremento percentuale nelle ultime 24 ore": results_2,
     "Le peggiori 10 criptovalute in termini di incremento percentuale nelle ultime 24 ore": results_3,
-    "Denaro necessario per acquistare una unita di ciascuna delle prime 20 criptovalute": TotPrice,
-    "Denaro necessario per acquistare una unita delle criptovalute con volume last24h > 76.000.000$": TotPrice24,
-    "% realizzata se avessi comprato una unita di ciascuna delle prime 20 criptovalute il giorno prima": f'{TotPerc}%'
+    "Denaro necessario per acquistare una unita di ciascuna delle prime 20 criptovalute": totPrice,
+    "Denaro necessario per acquistare una unita delle criptovalute con volume last24h > 76.000.000$": totPrice24,
+    "% realizzata se avessi comprato una unita di ciascuna delle prime 20 criptovalute il giorno prima": f'{totPerc}%'
 }
 file_time = datetime.now().strftime("%d%m%Y_%I%M%S%p")
 with open("Results_JSON_" + file_time, "w") as outfile:
