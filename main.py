@@ -63,11 +63,11 @@ for currency in currencies:
 
 # logic6
 for currency in currencies[:20]:
-    Gain = (currency['quote']['USD']['price'])*((currency['quote']['USD']['percent_change_24h'])/100)
+    Gain = currency['quote']['USD']['price']-(currency['quote']['USD']['price']/(1+currency['quote']['USD']['percent_change_24h']/100))
     totGain += Gain
 totPerc = totGain * 100 / totPrice
 
-# JSON file export
+# JSON format
 x = {
     "La criptovaluta con il volume maggiore (in $) delle ultime 24 ore": results_1,
     "Le migliori 10 criptovalute in termini di incremento percentuale nelle ultime 24 ore": results_2,
@@ -76,6 +76,8 @@ x = {
     "Denaro necessario per acquistare una unita delle criptovalute con volume last24h > 76.000.000$": totPrice24,
     "% realizzata se avessi comprato una unita di ciascuna delle prime 20 criptovalute il giorno prima": f'{totPerc}%'
 }
+
+# JSON export
 file_time = datetime.now().strftime("%d%m%Y_%I%M%S%p")
 with open("Results_JSON_" + file_time, "w") as outfile:
     json.dump(x, outfile, indent=4)
