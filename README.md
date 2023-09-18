@@ -2,7 +2,7 @@
 
 VERSIONE ITALIANA
 
-Il bot manda una richiesta a CoinMarketCap per ottenere una lista delle 100 criptovalute con maggior capitalizzazione.
+Il bot manda una richiesta a [CoinMarketCap](https://coinmarketcap.com/) per ottenere una lista delle 100 criptovalute con maggior capitalizzazione.
 Il bot elabora i seguenti punti e salva i risultati in un file JSON.
 
 - La criptovaluta con il volume maggiore (in $) delle ultime 24 ore
@@ -17,7 +17,7 @@ Un esempio di file è il seguente:
 ----------------------------------------------------------------------------
 ENGLISH VERSION
 
-The bot sends a request to CoinMarketCap to obtain a list of the 100 most capitalised cryptocurrencies.
+The bot sends a request to [CoinMarketCap](https://coinmarketcap.com/) to obtain a list of the 100 most capitalised cryptocurrencies.
 The bot processes the information below and saves the results in a JSON file.
 
 - The cryptocurrency with the highest volume (in $) in the last 24 hours
