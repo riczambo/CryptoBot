@@ -63,7 +63,7 @@ for currency in currencies:
 
 # logic6
 for currency in currencies[:20]:
-    Gain = currency['quote']['USD']['price']-(currency['quote']['USD']['price']/(1+currency['quote']['USD']['percent_change_24h']/100))
+    Gain = (currency['quote']['USD']['price']-(currency['quote']['USD']['price']/(1+currency['quote']['USD']['percent_change_24h']/100)))
     totGain += Gain
 totPerc = totGain * 100 / totPrice
 
